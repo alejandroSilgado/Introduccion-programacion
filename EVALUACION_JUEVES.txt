@@ -1,0 +1,174 @@
+EJERCICIO 1 
+Algoritmo alzas_dolar
+    Definir num_dias como entero
+    Definir precioDia como real 
+    Definir precio_anterior como real
+    Definir mayor_alza como real
+    num_dias = 0;
+    precio_anterior = 0;
+    mayor_alza = 0;
+    
+    Escribir "¿Cuántos días se contaron? : ";
+    leer num_dias
+    
+    Si num_dias <= 1 Entonces
+        Escribir "No hubo alzas.";
+    Sino
+        Para x <- 1 Hasta num_dias Con Paso 1 Hacer
+            Escribir "Día ", x, ": ";
+            leer precioDia
+            
+            Si x > 1 Entonces
+                Si (precioDia - precio_anterior) > mayor_alza Entonces
+                    mayor_alza = precioDia - precio_anterior
+                Fin Si
+            Fin Si
+            
+            precio_anterior = precioDia;
+        Fin Para
+        
+        Si mayor_alza > 0 Entonces
+            Escribir "La mayor alza fue de ", mayor_alza, " pesos.";
+        Sino
+            Escribir "No hubo alzas.";
+        Fin Si
+    Fin Si
+    
+Fin Algoritmo
+
+EJERCICIO 2
+
+Algoritmo maquina_alimentos 
+    Definir comidaA, comidaB, comidaC, monedasIngresadas, montoTotal, vuelto Como Real
+    Definir valor10, valor50, valor100 Como Entero
+    Definir productoElegido Como Caracter
+    valor10 = 10
+    valor50 = 50
+    valor100 = 100
+    comidaA = 270
+    comidaB = 340
+    comidaC = 370
+    vuelto = 0
+    
+    Escribir "Elija un producto. Opciones: A, B, C"
+    leer productoElegido
+    
+    Si productoElegido = "A" Entonces
+        montoTotal = comidaA
+    Sino
+        Si productoElegido = "B" Entonces
+            montoTotal = comidaB
+        Sino
+            Si productoElegido = "C" Entonces
+                montoTotal = comidaC
+            Fin Si
+        Fin Si
+    Fin Si
+    
+    Mientras monedasIngresadas < montoTotal Hacer
+        Escribir "Ingrese monedas (10, 50 o 100)"
+        leer moneda
+        monedasIngresadas = monedasIngresadas + moneda
+        
+        Si moneda <> valor10 Y moneda <> valor50 Y moneda <> valor100 Entonces
+            Escribir "Error: Ingrese solo monedas de 10, 50 o 100."
+            monedasIngresadas = monedasIngresadas - moneda 
+        Fin Si
+    Fin Mientras
+    
+    vuelto = monedasIngresadas - montoTotal
+    
+    Si vuelto > 0 Entonces
+        Escribir "Monto pagado. Su vuelto es de ", vuelto, " pesos."
+    Sino
+        Escribir "Monto pagado. No hay vuelto."
+    Fin Si
+    
+FinAlgoritmo
+
+EJERCICIO 3
+
+Algoritmo DescuentoSupermercado
+    Definir n, cantidadProductos Como Entero
+    Definir precio, precioTotal, descuentoTotal Como Real
+    
+    Escribir "Ingrese el valor de n:"
+    leer n
+    
+    Escribir "Ingrese la cantidad de productos:"
+    leer cantidadProductos
+    
+    precioTotal = 0
+    descuentoTotal = 0
+    
+    Para i <- 1 Hasta cantidadProductos Hacer
+        Escribir "Ingrese el precio del producto ", i
+        leer precio
+        
+        Si (i <= n) Entonces
+            descuento =descuento+ precio * 0.2
+			escribir descuento;
+		FinSi
+		
+        Si i>n y i<=n*2
+            descuento =descuento+ precio * 0.1 
+			escribir descuento;
+        Fin Si
+		si i>n*2 y i>=n*3
+			descuento=descuento+precio*0.05
+			escribir descuento;
+		FinSi
+        
+        descuentoTotal = descuentoTotal + descuento
+        precioTotal = precioTotal + precio
+    Fin Para
+    
+    Escribir "Total:", precioTotal
+    Escribir "Descuento:", descuento
+    Escribir "Por pagar:", precioTotal - descuento
+    
+FinAlgoritmo
+
+EJERCICIO 4
+
+Algoritmo notas
+	Definir certamen1, certamen2, certamen3, examen, promedio_certamenes Como Real
+	
+	Escribir "Ingrese la nota del Certamen 1: "
+	Leer certamen1
+	
+	Escribir "Ingrese la nota del Certamen 2: "
+	Leer certamen2
+	
+	Escribir "Ingrese la nota del Certamen 3: "
+	Leer certamen3
+	
+	Escribir "Ingrese la nota del Examen: "
+	Leer examen
+	
+	Si certamen1 < 2 Y certamen2 < 2 Entonces
+		Escribir "Estudiante automáticamente reprobado."
+	Sino Si certamen1 > 9 Y certamen2 > 9 Entonces
+			Escribir "Estudiante automáticamente aprobado."
+		Sino
+			promedio_certamenes = (certamen1 + certamen2 + certamen3) / 3
+			
+			Si promedio_certamenes >= 7 Entonces
+				Escribir "Estudiante aprobado."
+			Sino 
+				Si promedio_certamenes < 3 Entonces
+					Escribir "Estudiante reprobado."
+				Sino
+					Si examen >= 5 Entonces
+						Escribir "Estudiante aprobado."
+					Sino
+						Escribir "Estudiante reprobado."
+					Fin Si
+				Fin Si
+			Fin Si
+		Fin Si
+	FinSi
+	
+
+
+FinAlgoritmo
