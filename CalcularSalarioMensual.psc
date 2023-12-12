@@ -30,13 +30,13 @@ Algoritmo CalcularSalarioMensual
 	FinSi
 	
 	Escribir "reporte de salario con horas extras remuneradas" 
-	Escribir "Señor@:",nombre
+	Escribir "Seï¿½or@:",nombre
 	Escribir "sus horas trabajadas fueron: ", horasTrabajadas
 	Escribir "sus horas extras fueron: ",horasExtras
 	Escribir "Su salario base fue: ", salarioBase
 	Escribir "su salario con horas extras fue", salarioExtras
 	Escribir "su salario total fue:", salario
-	
-	
+
+	hola como esta "
 	
 FinAlgoritmo
