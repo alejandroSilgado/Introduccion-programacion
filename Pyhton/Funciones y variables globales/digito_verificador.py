@@ -18,11 +18,3 @@ modulo=digito%11
 codigo=11-modulo
 
 print(numero,"-",codigo)
-
-    
-
-
-
-
-
-
