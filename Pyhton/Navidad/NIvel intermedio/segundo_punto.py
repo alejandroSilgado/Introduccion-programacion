@@ -16,34 +16,40 @@ def registrar_productos():
         'stock_maximo': stock_maximo,
         'nombre_proveedor': nombre_proveedor
     }
-    producto=str
     return producto
-
 
 def visualizacion_productos(producto):
     print(producto)
 
-def actualizaciones_stock(codigo_validacion, producto, operacion,nuevo_stock):
-    codigo_validacion=int(input("Ingresará el código del producto"))
-    if codigo_validacion in producto
-        operacion=input("Vas a sumar o a restar el stock?: (Responde suma o resta)")
+def actualizaciones_stock(producto):
+    codigo_validacion = int(input("Ingrese el código del producto: "))
+    if codigo_validacion in producto:
+        operacion = input("¿Vas a sumar o a restar el stock? (Responde suma o resta): ")
         if operacion == "suma":
-            nuevo_stock=int(input=("Ingrese el valor a sumar: "))
-            suma_stock=(nuevo_stock+)
+            i = int(input("Ingrese el valor a sumar: "))
+            producto[codigo_validacion]['stock_minimo'] += i
+        elif operacion == "resta":
+            i = int(input("Ingrese el valor a restar: "))
+            producto[codigo_validacion]['stock_minimo'] -= i
+        else:
+            print("Operación no válida.")
+    else:
+        print("Código de producto no encontrado.")
 
-def info_puntos_criticos():
-    print("hola")
+def info_puntos_criticos(producto, productos_criticos):
+    if producto['stock_minimo'] < productos_criticos:
+        print(producto)
 
-def calculo_ganancia():
-    print("hola")
-
-def salir():
-    print("hola")
+def calculo_ganancia(producto, ganancia):
+    # Asumiendo que deseas calcular la ganancia de alguna manera, ajusta esta fórmula según tus necesidades
+    ganancia = producto['valor_venta'] - producto['valor_compra']
+    print("Su ganancia es:", ganancia)
 
 def main():
+    a = None  # Inicializar a fuera del bucle
     while True:
         print("\n*** Menú ***")
-        print("1. Registrar Productos:")
+        print("1. Registrar e:")
         print("2. Visualización de Productos:")
         print("3. Actualización de Stock:")
         print("4. Informe de Productos Críticos")
@@ -53,15 +59,18 @@ def main():
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
-            registrar_productos()
+            a = registrar_productos()
         elif opcion == "2":
-            visualizacion_productos()
+            visualizacion_productos(a)
         elif opcion == "3":
-            actualizaciones_stock()
+            if a is not None:  # Verificar que 'a' no sea None antes de llamar a actualizaciones_stock
+                actualizaciones_stock(a)
+            else:
+                print("Primero registra un producto antes de actualizar el stock.")
         elif opcion == "4":
-            info_puntos_criticos()
+            info_puntos_criticos(a, 10)  # Ingresa el valor mínimo deseado para considerar como crítico
         elif opcion == "5":
-            calculo_ganancia()
+            calculo_ganancia(a, 0)  # Ingresa el valor deseado para calcular la ganancia
         elif opcion == "6":
             break
         else:

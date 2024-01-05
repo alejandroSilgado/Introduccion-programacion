@@ -1,0 +1,8 @@
+SISTEMA DE DEPARTAMENTO ACADEMICO DE CAMPUS
+1.Inscricion de campers 
+2.Registrar resultado de la prueba 
+(tiene que permitir que el usuario ingrese el docuemtno del camper
+si el camper esta inscrito, tiene que dejarle ingresar las 3 notas que se hicieron en el mes, las 
+notas son 60% trabajo practico %40 evaluacion filtro %trabajos en clase, si el promedio es >=60 paso, 
+si no perdio el filtro, )
+3.
